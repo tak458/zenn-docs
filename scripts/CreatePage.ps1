@@ -5,11 +5,11 @@ Set-Location ($path + "\..\");
 
 # ファイル作成
 git pull;
-$dir = (get-date -Format "yyyy\\MM");
+$dir = "diary\" + (get-date -Format "yyyy\\MM");
 if (-NOT (Test-Path $dir)) {
     New-Item $dir -ItemType directory;
 }
-$FileName = ((get-date -Format "yyyy\\MM\\dd") + ".md");
+$FileName = ("diary\" + (get-date -Format "yyyy\\MM\\dd") + ".md");
 if (-NOT (Test-Path $FileName)) {
     New-Item $FileName;
 }
