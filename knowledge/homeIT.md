@@ -19,8 +19,8 @@
 Let's Note
 
 SHDDに換装済み
-* 旧HGST HDD
-* Seagate SHDD
+* 旧HGST HDD 5K1000-750 HTS541075A9E680
+* Seagate SHDD ST1000LX015-SWT
 
 ## 自宅ネットワーク
 
