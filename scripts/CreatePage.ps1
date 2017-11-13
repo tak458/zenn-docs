@@ -11,7 +11,7 @@ if (-NOT (Test-Path $dir)) {
 }
 $FileName = ("diary\" + (get-date -Format "yyyy\\MM\\dd") + ".md");
 if (-NOT (Test-Path $FileName)) {
-    New-Item $FileName;
+    Copy-Item "diary\template.md" $FileName;
 }
 
 # 元の場所に戻す
