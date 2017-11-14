@@ -1,4 +1,14 @@
-# PC構成
+# 自宅ネットワーク構成
+
+## ルータ
+
+iBuffalo WSR-2533DHP-CB
+
+LAN側設定
+* ネットワーク：192.168.11.0/24
+* DHCP:192.168.11.64～ 64個
+* Gateway:192.168.11.1
+* DNS:192.168.11.1
 
 ## メインPC（自作）
 
@@ -16,16 +26,21 @@
 
 ## ノートPC
 
-Let's Note
+Let's Note CF-NX2
 
 SHDDに換装済み
 * 旧HGST HDD 5K1000-750 HTS541075A9E680
 * Seagate SHDD ST1000LX015-SWT
 
-## 自宅ネットワーク
+### NAS
 
-iBuffalo WSR-2533DHP-CB
+Synology DiskStation DS218play
 
-## 実家ネットワーク
+* IP:192.168.11.5
+* HDD:Westan Degital Red 3TB(SATA) 2台
+
+# 実家ネットワーク構成
+
+## ルータ
 
 iBuffalo
