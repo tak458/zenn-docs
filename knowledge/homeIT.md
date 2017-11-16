@@ -24,6 +24,29 @@ LAN側設定
 |Storage 2      |2794GB Western Digital WDC WD30EZRZ-00Z5HB0 (SATA)  |   |
 |Optical Drives |PIONEER BD-RW BDR-207M                              |   |
 
+### 前世代PCのベンチマーク
+
+```
+-----------------------------------------------------------------------
+CrystalDiskMark 3.0.1 x64 (C) 2007-2010 hiyohiyo
+                           Crystal Dew World : http://crystalmark.info/
+-----------------------------------------------------------------------
+* MB/s = 1,000,000 byte/s [SATA/300 = 300,000,000 byte/s]
+
+           Sequential Read :   505.825 MB/s
+          Sequential Write :   189.856 MB/s
+         Random Read 512KB :   381.142 MB/s
+        Random Write 512KB :   190.461 MB/s
+    Random Read 4KB (QD=1) :    25.206 MB/s [  6153.8 IOPS]
+   Random Write 4KB (QD=1) :    63.703 MB/s [ 15552.6 IOPS]
+   Random Read 4KB (QD=32) :   271.859 MB/s [ 66371.9 IOPS]
+  Random Write 4KB (QD=32) :   174.695 MB/s [ 42650.1 IOPS]
+
+  Test : 1000 MB [C: 33.0% (39.3/119.1 GB)] (x5)
+  Date : 2012/02/15 20:39:27
+    OS : Windows 7 Ultimate Edition SP1 [6.1 Build 7601] (x64)
+```
+
 ## ノートPC
 
 Let's Note CF-NX2
