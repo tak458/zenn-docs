@@ -34,3 +34,8 @@ echo "set nocompatible">~/.vimrc
 ## メール設定
 [debianサーバでメールを送る（exim4編） \- ひゃまだのブログ](https://sites.google.com/site/hymd3a/linux/debian-exim4)
 [メールを受け取らないサーバでのexim4の設定 \- たていすのメモ2](http://tateisu.hatenablog.com/entry/2012/03/03/083829)
+
+# ラズパイゼロの初期設定
+[Installing operating system images \- Raspberry Pi Documentation](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
+[Raspbianのインストールと最強の初期設定 \| 純規の暇人趣味ブログ](https://jyn.jp/raspbian-setup/)
+Synology NASとラズパイZero間でSSH公開鍵の設定。これでrsyncでパスワード不要になる。
