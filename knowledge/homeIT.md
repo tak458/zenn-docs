@@ -2,13 +2,7 @@
 
 ## ルータ
 
-iBuffalo WSR-2533DHP-CB
-
-LAN側設定
-* ネットワーク：192.168.11.0/24
-* DHCP:192.168.11.64～ 64個
-* Gateway:192.168.11.1
-* DNS:192.168.11.1
+d-room備え付け
 
 ## メインPC（自作）
 
@@ -55,11 +49,15 @@ SHDDに換装済み
 * 旧HGST HDD 5K1000-750 HTS541075A9E680
 * Seagate SHDD ST1000LX015-SWT
 
+Ubuntu 16.04にOS変更
+* USBメモリでいれただけ
+* [Let's note CF\-NX2にFedora 22を入れて最初にやったこと \- azmin's diary](http://azmin.hatenablog.com/entry/2015/10/23/014414)
+
 ### NAS
 
 Synology DiskStation DS218play
 
-* IP:192.168.11.5
+* Hostname(Bonjour):ty458fam-media.local
 * HDD:Westan Degital Red 3TB(SATA) 2台
 
 # 実家ネットワーク構成
