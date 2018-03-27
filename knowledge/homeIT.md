@@ -52,6 +52,7 @@ SHDDに換装済み
 Ubuntu 16.04にOS変更
 * USBメモリでいれただけ
 * [Let's note CF\-NX2にFedora 22を入れて最初にやったこと \- azmin's diary](http://azmin.hatenablog.com/entry/2015/10/23/014414)
+* ディスプレイの明るさ変更はうまくいかない
 
 ### NAS
 
