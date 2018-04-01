@@ -50,4 +50,8 @@ Synology NASとラズパイZero間でSSH公開鍵の設定。これでrsyncで�
 * [debianサーバでメールを送る（exim4編） \- ひゃまだのブログ](https://sites.google.com/site/hymd3a/linux/debian-exim4)
 * [メールを受け取らないサーバでのexim4の設定 \- たていすのメモ2](http://tateisu.hatenablog.com/entry/2012/03/03/083829)
 
+## logwatch
+https://www.mk-mode.com/octopress/2017/09/22/debian-9-logwatch-installation/
+http://wings2fly.jp/yaneura/raspberry-pi-security-logwatch/
+
 ## Google Homeと連携
