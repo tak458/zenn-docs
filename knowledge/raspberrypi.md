@@ -2,13 +2,97 @@
 
 ## 初期構築
 
-* raspbian(lite)をダウンロード
-* EtcherでSDカードに書き込み
-* sshファイルを作る
-* Wi-fiの設定ファイルを作る
-* 設定作業
+### raspbian(lite)をダウンロード
+### EtcherでSDカードに書き込み
+### sshファイルを作る
+```
+(空ファイル)
 ```
 
+### Wi-fiの設定ファイルを作る
+wpa_supplicant.conf
+```
+country=JP
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+    ssid="Buffalo-G-055E"
+    psk=8a16c41b92510ee4208b0d494271dbf7747e1564f3ece6e8ae8d000f0d0fb657
+}```
+
+### 設定作業
+```
+# pi ユーザのパスワード変更
+$ sudo passwd
+
+$ sudo /usr/sbin/useradd --groups sudo -m takahiro -s /bin/bash
+$ sudo passwd takahiro
+$ sudo passwd --lock pi
+
+# apt更新
+$ sudo apt-get update
+$ sudo apt-get -y dist-upgrade
+$ sudo apt-get -y autoremove
+$ sudo apt-get autoclean
+
+# 自動更新
+$ sudo apt-get install -y unattended-upgrades
+$ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+"o=${distro_id},n=${distro_codename}"; # Origin-Patternに書き込む
+
+# raspi-config
+$ sudo raspi-config nonint do_memory_split 16
+$ sudo raspi-config nonint do_hostname raspi-wh-1
+$ sudo raspi-config nonint do_expand_rootfs
+$ sudo timedatectl set-timezone Asia/Tokyo
+
+# exim4
+$ sudo apt -y install exim4 mailutils
+$ sudo dpkg-reconfigure exim4-config
+$ sudo nano /etc/aliases
+takahiro: takahiro@ty458fam.myds.me # ← 追記
+
+$ cat /etc/exim4/update-exim4.conf.conf
+dc_eximconfig_configtype='satellite'
+dc_other_hostnames='raspi-w-1.local'
+dc_local_interfaces='127.0.0.1 ; ::1'
+dc_readhost='raspi-w-1.local'
+dc_relay_domains=''
+dc_minimaldns='false'
+dc_relay_nets=''
+dc_smarthost='ty458fam.myds.me'
+CFILEMODE='644'
+dc_use_split_config='false'
+dc_hide_mailname='true'
+dc_mailname_in_oh='true'
+dc_localdelivery='mail_spool'
+
+# logwatch
+$ sudo apt -y install logwatch
+$ sudo cp /usr/share/logwatch/default.conf/logwatch.conf /etc/logwatch/conf/
+$ sudo mkdir /var/cache/logwatch
+$ sudo nano /usr/share/logwatch/conf/logwatch.conf
+Output = mail # 変更
+Detail = Mid # 変更
+
+
+# http://yagitsawa.github.io/2017/06/17/raspberrypi-camera-rtsp-server/
+$ sudo modprobe bcm2835-v4l2
+$ sudo nano /etc/modules
+bcm2835-v4l2 # 末尾に追記
+$ sudo apt-get -y install vlc
+$ sudo raspivid -o - -t 0 -w 640 -h 480 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264
+
+# https://github.com/mpromonet/v4l2rtspserver
+; https://mincode.net/?p=129
+cd ~
+git clone https://github.com/mpromonet/v4l2rtspserver.git
+cd v4l2rtspserver
+cmake . && make
+$ sudo make install
+$ sudo modprobe -v bcm2835-v4l2
+$ sudo systemctl start v4l2rtspserver.service
+$ sudo systemctl enable v4l2rtspserver.service
 ```
 
 参考URL
@@ -55,3 +139,6 @@ https://www.mk-mode.com/octopress/2017/09/22/debian-9-logwatch-installation/
 http://wings2fly.jp/yaneura/raspberry-pi-security-logwatch/
 
 ## Google Homeと連携
+
+## Docker
+[Get Docker CE for Debian \| Docker Documentation](https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository)
