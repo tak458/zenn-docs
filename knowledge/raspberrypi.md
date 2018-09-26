@@ -93,6 +93,26 @@ $ sudo make install
 $ sudo modprobe -v bcm2835-v4l2
 $ sudo systemctl start v4l2rtspserver.service
 $ sudo systemctl enable v4l2rtspserver.service
+
+$ sudo nano /etc/systemd/system/v4l2rtspserver.service
+# systemd configuration for v4l2rtspserver
+# /etc/systemd/system/v4l2rtspserver.service
+ 
+[Unit]
+Description=v4l2rtspserver rtsp streaming server
+After=network.target
+ 
+[Service]
+ExecStartPre=/usr/local/bin/v4l2-ctl --set-ctrl h264_i_frame_period=5
+ExecStart=/usr/local/bin/v4l2rtspserver -F 5 -W 1920 -H 1080
+#ExecReload=/bin/kill -HUP $MAINPID
+Type=simple
+User=root
+Group=video
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
 ```
 
 参考URL
