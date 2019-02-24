@@ -18,7 +18,8 @@ update_config=1
 network={
     ssid="Buffalo-G-055E"
     psk=8a16c41b92510ee4208b0d494271dbf7747e1564f3ece6e8ae8d000f0d0fb657
-}```
+}
+```
 
 ### 設定作業
 ```
