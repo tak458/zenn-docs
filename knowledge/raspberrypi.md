@@ -24,7 +24,7 @@ network={
 ### 設定作業
 ```
 # pi ユーザのパスワード変更
-$ sudo passwd
+$ sudo passwd root
 
 $ sudo /usr/sbin/useradd --groups sudo -m takahiro -s /bin/bash
 $ sudo passwd takahiro
@@ -72,7 +72,7 @@ dc_localdelivery='mail_spool'
 $ sudo apt -y install logwatch
 $ sudo cp /usr/share/logwatch/default.conf/logwatch.conf /etc/logwatch/conf/
 $ sudo mkdir /var/cache/logwatch
-$ sudo nano /usr/share/logwatch/conf/logwatch.conf
+$ sudo nano /etc/logwatch/conf/logwatch.conf
 Output = mail # 変更
 Detail = Mid # 変更
 
