@@ -74,7 +74,7 @@ $ sudo cp /usr/share/logwatch/default.conf/logwatch.conf /etc/logwatch/conf/
 $ sudo mkdir /var/cache/logwatch
 $ sudo nano /etc/logwatch/conf/logwatch.conf
 Output = mail # 変更
-Detail = Mid # 変更
+Detail = Med # 変更
 
 
 # http://yagitsawa.github.io/2017/06/17/raspberrypi-camera-rtsp-server/
