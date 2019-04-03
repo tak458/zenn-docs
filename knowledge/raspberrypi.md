@@ -1,4 +1,4 @@
-# Raspberry Pi Zero WH
+# Raspberry Pi Zero W
 
 ## 初期構築
 
@@ -22,6 +22,9 @@ network={
 ```
 
 ### 設定作業
+
+pi / raspberry でログイン
+
 ```
 # pi ユーザのパスワード変更
 $ sudo passwd root
@@ -43,23 +46,52 @@ $ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 
 # raspi-config
 $ sudo raspi-config nonint do_memory_split 16
-$ sudo raspi-config nonint do_hostname raspi-wh-1
+$ sudo raspi-config nonint do_hostname raspi-w-1
 $ sudo raspi-config nonint do_expand_rootfs
 $ sudo timedatectl set-timezone Asia/Tokyo
 
 # exim4
 $ sudo apt -y install exim4 mailutils
 $ sudo dpkg-reconfigure exim4-config
+
+General type of mail configuration:
+->mail sent by smarthost; no local mail
+
+System mail name:
+->raspi-w-1
+
+IP-addresses to listen on for incoming SMTP connections:
+->127.0.0.1 ; ::1
+
+Other destinations for which mail is accepted:
+->raspi-w-1
+
+Visible domain name for local users:
+->raspi-w-1
+
+IP address or host name of the outgoing smarthost:
+->ty458fam.myds.me
+
+Keep number of DNS-queries minimal (Dial-on-Demand)?
+->Yes
+
+Split configuration into small files?
+->No
+
+Root and postmaster mail recipient:
+->
+
 $ sudo nano /etc/aliases
+root: takahiro # ← 追記
 takahiro: takahiro@ty458fam.myds.me # ← 追記
 
 $ cat /etc/exim4/update-exim4.conf.conf
 dc_eximconfig_configtype='satellite'
-dc_other_hostnames='raspi-w-1.local'
+dc_other_hostnames='raspi-w-1'
 dc_local_interfaces='127.0.0.1 ; ::1'
-dc_readhost='raspi-w-1.local'
+dc_readhost='raspi-w-1'
 dc_relay_domains=''
-dc_minimaldns='false'
+dc_minimaldns='true'
 dc_relay_nets=''
 dc_smarthost='ty458fam.myds.me'
 CFILEMODE='644'
@@ -78,6 +110,8 @@ Detail = Med # 変更
 
 
 # http://yagitsawa.github.io/2017/06/17/raspberrypi-camera-rtsp-server/
+$ sudo raspi-config
+Interfacing Options で Camera を有効化
 $ sudo modprobe bcm2835-v4l2
 $ sudo nano /etc/modules
 bcm2835-v4l2 # 末尾に追記
@@ -86,10 +120,11 @@ $ sudo raspivid -o - -t 0 -w 640 -h 480 | cvlc -vvv stream:///dev/stdin --sout '
 
 # https://github.com/mpromonet/v4l2rtspserver
 ; https://mincode.net/?p=129
-cd ~
-git clone https://github.com/mpromonet/v4l2rtspserver.git
-cd v4l2rtspserver
-cmake . && make
+$ cd ~
+$ sudo apt-get install -y git cmake
+$ git clone https://github.com/mpromonet/v4l2rtspserver.git
+$ cd v4l2rtspserver
+$ cmake . && make
 $ sudo make install
 $ sudo modprobe -v bcm2835-v4l2
 $ sudo systemctl start v4l2rtspserver.service
