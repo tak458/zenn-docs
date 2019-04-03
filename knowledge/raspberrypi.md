@@ -139,7 +139,7 @@ Description=v4l2rtspserver rtsp streaming server
 After=network.target
  
 [Service]
-ExecStartPre=/usr/local/bin/v4l2-ctl --set-ctrl h264_i_frame_period=5
+ExecStartPre=/usr/bin/v4l2-ctl --set-ctrl h264_i_frame_period=5
 ExecStart=/usr/local/bin/v4l2rtspserver -F 5 -W 1920 -H 1080
 #ExecReload=/bin/kill -HUP $MAINPID
 Type=simple
