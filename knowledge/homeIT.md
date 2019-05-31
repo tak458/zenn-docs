@@ -2,7 +2,11 @@
 
 ## ルータ
 
-d-room備え付け
+Buffalo 
+
+## 中継器
+
+Buffalo 
 
 ## メインPC（自作）
 
@@ -60,6 +64,10 @@ Synology DiskStation DS218play
 
 * Hostname(Bonjour):ty458fam-media.local
 * HDD:Westan Degital Red 3TB(SATA) 2台
+
+## DNS
+
+NAS に設定済み。設定ファイルは[./homeIT/dns_config]にある。
 
 # 実家ネットワーク構成
 

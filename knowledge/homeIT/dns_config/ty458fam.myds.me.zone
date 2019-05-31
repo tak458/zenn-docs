@@ -1,0 +1,15 @@
+$ORIGIN ty458fam.myds.me.
+$TTL 86400
+ty458fam.myds.me. IN SOA ns.ty458fam.myds.me. mail.ty458fam.myds.me. (
+	7
+	43200
+	180
+	1209600
+	10800
+)
+debian-note.ty458fam.myds.me.	60	A	192.168.11.145
+raspi-w-1.ty458fam.myds.me.	60	A	192.168.11.130
+raspi-3-1.ty458fam.myds.me.	60	A	192.168.11.141
+ty458fam.myds.me.	60	A	192.168.11.5
+ty458fam.myds.me.	60	NS	ns.ty458fam.myds.me.
+ns.ty458fam.myds.me.	60	A	192.168.11.5
