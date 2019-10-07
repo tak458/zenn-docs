@@ -140,7 +140,7 @@ After=network.target
  
 [Service]
 ExecStartPre=/usr/bin/v4l2-ctl --set-ctrl h264_i_frame_period=5
-ExecStart=/usr/local/bin/v4l2rtspserver -F 5 -W 1920 -H 1080
+ExecStart=/usr/local/bin/v4l2rtspserver -F 5 -W 1600 -H 1200
 #ExecReload=/bin/kill -HUP $MAINPID
 Type=simple
 User=root
