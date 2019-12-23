@@ -23,6 +23,10 @@ network={
 
 ### 設定作業
 
+```
+ssh pi@raspberrypi.local
+```
+
 pi / raspberry でログイン
 
 ```
@@ -32,6 +36,12 @@ $ sudo passwd root
 $ sudo /usr/sbin/useradd --groups sudo -m takahiro -s /bin/bash
 $ sudo passwd takahiro
 $ sudo passwd --lock pi
+
+# raspi-config
+$ sudo raspi-config nonint do_memory_split 16
+$ sudo raspi-config nonint do_hostname raspi-w-1
+$ sudo raspi-config nonint do_expand_rootfs
+$ sudo timedatectl set-timezone Asia/Tokyo
 
 # apt更新
 $ sudo apt-get update
@@ -43,12 +53,6 @@ $ sudo apt-get autoclean
 $ sudo apt-get install -y unattended-upgrades
 $ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 "o=${distro_id},n=${distro_codename}"; # Origin-Patternに書き込む
-
-# raspi-config
-$ sudo raspi-config nonint do_memory_split 16
-$ sudo raspi-config nonint do_hostname raspi-w-1
-$ sudo raspi-config nonint do_expand_rootfs
-$ sudo timedatectl set-timezone Asia/Tokyo
 
 # exim4
 $ sudo apt -y install exim4 mailutils
@@ -63,7 +67,7 @@ System mail name:
 IP-addresses to listen on for incoming SMTP connections:
 ->127.0.0.1 ; ::1
 
-Other destinations for which mail is accepted:
+Other destinations for which mail is accepted:d
 ->raspi-w-1
 
 Visible domain name for local users:
