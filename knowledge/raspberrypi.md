@@ -37,6 +37,11 @@ $ sudo /usr/sbin/useradd --groups sudo -m takahiro -s /bin/bash
 $ sudo passwd takahiro
 $ sudo passwd --lock pi
 
+# 公開鍵認証
+$ sudo nano /etc/ssh/sshd_config
+#PubkeyAuthentication yes <-コメントイン
+$ sudo systemctl restart sshd
+
 # raspi-config
 $ sudo raspi-config nonint do_memory_split 16
 $ sudo raspi-config nonint do_hostname raspi-w-1
