@@ -42,11 +42,26 @@ $ sudo nano /etc/ssh/sshd_config
 #PubkeyAuthentication yes <-コメントイン
 $ sudo systemctl restart sshd
 
+# Wi-Fi 再接続設定
+$ cd /usr/local/bin
+$ sudo nano wifi-reconnect.sh
+#!/bin/sh
+ping -c 1 ty458fam.myds.me
+if [ $? -ne 0 ]; then
+  ifconfig wlan0 down
+  ifconfig wlan0 up
+fi
+$ sudo nano /etc/cron.d/wifi-reconnect
+SHELL=/bin/bash
+PATH=/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=""
+* * * * * root bash /usr/local/bin/wifi-reconnect.sh
+
 # raspi-config
 $ sudo raspi-config nonint do_memory_split 16
-$ sudo raspi-config nonint do_hostname raspi-w-1
 $ sudo raspi-config nonint do_expand_rootfs
 $ sudo timedatectl set-timezone Asia/Tokyo
+$ sudo raspi-config nonint do_hostname raspi-w-1
 
 # apt更新
 $ sudo apt-get update
