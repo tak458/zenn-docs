@@ -22,7 +22,9 @@ Buffalo Air Station WEX-1166DHP
 | Storage 2       | 2794GB Western Digital WDC WD30EZRZ-00Z5HB0 (SATA)   |        |
 | Optical Drives  | PIONEER BD-RW BDR-207M                               |        |
 
-### 前世代PCのベンチマーク
+### ベンチマーク
+
+#### 前世代PC
 
 ```
 -----------------------------------------------------------------------
@@ -43,6 +45,36 @@ CrystalDiskMark 3.0.1 x64 (C) 2007-2010 hiyohiyo
   Test : 1000 MB [C: 33.0% (39.3/119.1 GB)] (x5)
   Date : 2012/02/15 20:39:27
     OS : Windows 7 Ultimate Edition SP1 [6.1 Build 7601] (x64)
+```
+
+#### 2020/12/13
+
+```
+------------------------------------------------------------------------------
+CrystalDiskMark 8.0.0 x64 (UWP) (C) 2007-2020 hiyohiyo
+                                  Crystal Dew World: https://crystalmark.info/
+------------------------------------------------------------------------------
+* MB/s = 1,000,000 bytes/s [SATA/600 = 600,000,000 bytes/s]
+* KB = 1000 bytes, KiB = 1024 bytes
+
+[Read]
+  SEQ    1MiB (Q=  8, T= 1):   543.188 MB/s [    518.0 IOPS] < 15407.04 us>
+  SEQ    1MiB (Q=  1, T= 1):   510.084 MB/s [    486.5 IOPS] <  2054.29 us>
+  RND    4KiB (Q= 32, T= 1):   188.997 MB/s [  46141.8 IOPS] <   683.02 us>
+  RND    4KiB (Q=  1, T= 1):    27.355 MB/s [   6678.5 IOPS] <   149.33 us>
+
+[Write]
+  SEQ    1MiB (Q=  8, T= 1):   458.892 MB/s [    437.6 IOPS] < 18204.11 us>
+  SEQ    1MiB (Q=  1, T= 1):   427.376 MB/s [    407.6 IOPS] <  2447.79 us>
+  RND    4KiB (Q= 32, T= 1):   137.234 MB/s [  33504.4 IOPS] <   951.08 us>
+  RND    4KiB (Q=  1, T= 1):    66.421 MB/s [  16216.1 IOPS] <    61.32 us>
+
+Profile: Default
+   Test: 1 GiB (x5) [C: 91% (202/223GiB)]
+   Mode:
+   Time: Measure 5 sec / Interval 5 sec 
+   Date: 2020/12/13 22:27:52
+     OS: Windows 10 Professional [10.0 Build 19042] (x64)
 ```
 
 ## ノートPC
