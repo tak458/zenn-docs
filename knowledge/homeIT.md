@@ -8,23 +8,24 @@ Buffalo Air Station WXR-1900DHP3
 
 Buffalo Air Station WEX-1166DHP
 
-## メインPC（自作）
+## メイン PC（自作）
 
-| パーツ          | 構成                                                 | 製品名 |
-|:----------------|:-----------------------------------------------------|:-------|
-| OS              | Windows 10 Pro 64-bit                                |        |
-| CPU             | Intel Core i7 6700 @ 3.40GHz Skylake 14nm Technology |        |
-| RAM             | 16.0GB Dual-Channel Unknown @ 1064MHz (15-15-15-36)  |        |
-| Motherboard     | ASUSTeK COMPUTER INC. H170-PRO (LGA1151)             |        |
-| Graphics(Inner) | Intel HD Graphics 530 (ASUStek Computer Inc)         |        |
-| Graphics(Board) | nVIDIA GeForce GTX 1070                              | NE51070S15P2-1041J 8GB Super JetStream [PCIExp 8GB] ドスパラWeb限定モデル |
-| Storage 1       | 223GB Crucial CT240BX200SSD1 (SSD)                   |        |
-| Storage 2       | 2794GB Western Digital WDC WD30EZRZ-00Z5HB0 (SATA)   |        |
-| Optical Drives  | PIONEER BD-RW BDR-207M                               |        |
+| パーツ          | 構成                                                 | 製品名                                                                      |
+| :-------------- | :--------------------------------------------------- | :-------------------------------------------------------------------------- |
+| OS              | Windows 10 Pro 64-bit                                |                                                                             |
+| CPU             | Intel Core i7 6700 @ 3.40GHz Skylake 14nm Technology |                                                                             |
+| RAM             | 16.0GB Dual-Channel Unknown @ 1064MHz (15-15-15-36)  |                                                                             |
+| Motherboard     | ASUSTeK COMPUTER INC. H170-PRO (LGA1151)             |                                                                             |
+| Graphics(Inner) | Intel HD Graphics 530 (ASUStek Computer Inc)         |                                                                             |
+| Graphics(Board) | nVIDIA GeForce GTX 1070                              | NE51070S15P2-1041J 8GB Super JetStream [PCIExp 8GB] ドスパラ Web 限定モデル |
+| Storage 1       | 512GB シリコンパワー SP512GBP34A60M28 (M.2 SSD)      | 3D TLC NAND M.2 2280 PCIe3.0x4 NVMe1.3 P34A60 シリーズ 5 年保証             |
+| Storage 2       | 223GB Crucial CT240BX200SSD1 (SSD)                   |                                                                             |
+| Storage 3       | 2794GB Western Digital WDC WD30EZRZ-00Z5HB0 (SATA)   |                                                                             |
+| Optical Drives  | PIONEER BD-RW BDR-207M                               |                                                                             |
 
 ### ベンチマーク
 
-#### 前世代PC
+#### 前世代 PC
 
 ```
 -----------------------------------------------------------------------
@@ -72,30 +73,62 @@ CrystalDiskMark 8.0.0 x64 (UWP) (C) 2007-2020 hiyohiyo
 Profile: Default
    Test: 1 GiB (x5) [C: 91% (202/223GiB)]
    Mode:
-   Time: Measure 5 sec / Interval 5 sec 
+   Time: Measure 5 sec / Interval 5 sec
    Date: 2020/12/13 22:27:52
      OS: Windows 10 Professional [10.0 Build 19042] (x64)
 ```
 
-## ノートPC
+#### 2020/12/16 OS ドライブを SSD から M.2 に換装
+
+```
+------------------------------------------------------------------------------
+CrystalDiskMark 8.0.0 x64 (UWP) (C) 2007-2020 hiyohiyo
+                                  Crystal Dew World: https://crystalmark.info/
+------------------------------------------------------------------------------
+* MB/s = 1,000,000 bytes/s [SATA/600 = 600,000,000 bytes/s]
+* KB = 1000 bytes, KiB = 1024 bytes
+
+[Read]
+  SEQ    1MiB (Q=  8, T= 1):  2470.084 MB/s [   2355.7 IOPS] <  3386.97 us>
+  SEQ    1MiB (Q=  1, T= 1):  1372.023 MB/s [   1308.5 IOPS] <   761.94 us>
+  RND    4KiB (Q= 32, T= 1):   361.821 MB/s [  88335.2 IOPS] <   350.75 us>
+  RND    4KiB (Q=  1, T= 1):    41.069 MB/s [  10026.6 IOPS] <    99.39 us>
+
+[Write]
+  SEQ    1MiB (Q=  8, T= 1):  1949.277 MB/s [   1859.0 IOPS] <  4290.26 us>
+  SEQ    1MiB (Q=  1, T= 1):  1777.548 MB/s [   1695.2 IOPS] <   588.90 us>
+  RND    4KiB (Q= 32, T= 1):   255.716 MB/s [  62430.7 IOPS] <   500.80 us>
+  RND    4KiB (Q=  1, T= 1):   127.670 MB/s [  31169.4 IOPS] <    31.86 us>
+
+Profile: Default
+   Test: 1 GiB (x5) [C: 13% (63/476GiB)]
+   Mode:
+   Time: Measure 5 sec / Interval 5 sec
+   Date: 2020/12/16 22:21:28
+     OS: Windows 10 Professional [10.0 Build 19042] (x64)
+```
+
+## ノート PC
 
 Let's Note CF-NX2
 
-SHDDに換装済み
-* 旧HGST HDD 5K1000-750 HTS541075A9E680
-* Seagate SHDD ST1000LX015-SWT
+SHDD に換装済み
 
-Ubuntu 16.04にOS変更
-* USBメモリでいれただけ
-* [Let's note CF\-NX2にFedora 22を入れて最初にやったこと \- azmin's diary](http://azmin.hatenablog.com/entry/2015/10/23/014414)
-* ディスプレイの明るさ変更はうまくいかない
+- 旧 HGST HDD 5K1000-750 HTS541075A9E680
+- Seagate SHDD ST1000LX015-SWT
+
+Ubuntu 16.04 に OS 変更
+
+- USB メモリでいれただけ
+- [Let's note CF\-NX2 に Fedora 22 を入れて最初にやったこと \- azmin's diary](http://azmin.hatenablog.com/entry/2015/10/23/014414)
+- ディスプレイの明るさ変更はうまくいかない
 
 ### NAS
 
 Synology DiskStation DS218play
 
-* Hostname(Bonjour):ty458fam-media.local
-* HDD:Westan Degital Red 3TB(SATA) 2台
+- Hostname(Bonjour):ty458fam-media.local
+- HDD:Westan Degital Red 3TB(SATA) 2 台
 
 ## DNS
 
