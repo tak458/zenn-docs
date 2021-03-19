@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    "every weekend"
+  ],
+  "patch": {
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "automerge": true
+    }
+  ]
+}
