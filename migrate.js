@@ -29,14 +29,29 @@ async function getQiita() {
   });
 }
 
-async function createZennArticle(qiitaArticle){
-  const hash = crypto.createHash("md5").update(qiitaArticle.body).digest("hex");
+// refs https://github.com/zenn-dev/zenn-editor/blob/02bf9b1e245f0b187470f4cdbe80f5fe38656829/packages/zenn-cli/cli/new-article.ts#L13-L17
+function pickRandomEmoji(src) {
+  // prettier-ignore
+  const emojiList =["😺","📘","📚","📑","😊","😎","👻","🤖","😸","😽","💨","💬","💭","👋", "👌","👏","🙌","🙆","🐕","🐈","🦁","🐷","🦔","🐥","🐡","🐙","🍣","🕌","🌟","🔥","🌊","🎃","✨","🎉","⛳","🔖","📝","🗂","📌"]
+  const bytes = Array.from(new TextEncoder().encode(src));
+  const bytesSum = bytes.reduce(
+    (pre, cur) => (pre + cur) % emojiList.length,
+    0
+  );
+  return emojiList[Math.floor(bytesSum)];
+}
 
+function pickRandomSlug(src) {
+  const hash = crypto.createHash("md5").update(src).digest("hex");
+  return hash.substring(0, 20);
+}
+
+async function createZennArticle(qiitaArticle) {
   const topics = qiitaArticle.tags.map((tag) => tag.name);
-  const filename = `./articles/${hash.substring(0, 20)}.md`;
+  const filename = `./articles/${pickRandomSlug(qiitaArticle.body)}.md`;
   const header = `---
 title: "${qiitaArticle.title}"
-emoji:
+emoji: "${pickRandomEmoji(qiitaArticle.body)}"
 type: "tech"  # tech: 技術記事 / idea: アイデア
 topics: [ "${topics.join('", "')}" ]
 published: false
