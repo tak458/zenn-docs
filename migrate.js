@@ -54,7 +54,7 @@ title: "${qiitaArticle.title}"
 emoji: "${pickRandomEmoji(qiitaArticle.body)}"
 type: "tech"  # tech: 技術記事 / idea: アイデア
 topics: [ "${topics.join('", "')}" ]
-published: false
+published: true
 created_at: "${qiitaArticle.created_at}"
 updated_at: "${qiitaArticle.updated_at}"
 ---
