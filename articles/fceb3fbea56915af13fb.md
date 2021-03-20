@@ -1,6 +1,6 @@
 ---
 title: "PowerShellのコンソール起動時に.envを読み込む"
-emoji:
+emoji: "😽"
 type: "tech"  # tech: 技術記事 / idea: アイデア
 topics: [ "PowerShell" ]
 published: false
