@@ -1,0 +1,14 @@
+$ORIGIN 11.168.192.in-addr.arpa.
+$TTL 86400
+11.168.192.in-addr.arpa. IN SOA ns.11.168.192.in-addr.arpa. mail.11.168.192.in-addr.arpa. (
+	9
+	43200
+	180
+	1209600
+	10800
+)
+130.11.168.192.in-addr.arpa.	60	PTR	raspi-w-1.ty458fam.myds.me.
+145.11.168.192.in-addr.arpa.	60	PTR	debian-note.ty458fam.myds.me.
+141.11.168.192.in-addr.arpa.	60	PTR	raspi-3-1.ty458fam.myds.me.
+5.11.168.192.in-addr.arpa.	60	PTR	ns.ty458fam.myds.me.
+11.168.192.in-addr.arpa.	60	NS	ns.ty458fam.myds.me.
