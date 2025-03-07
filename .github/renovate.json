@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "timezone": "Asia/Tokyo",
   "schedule": [
@@ -11,7 +11,7 @@
   },
   "packageRules": [
     {
-      "depTypeList": [
+      "matchDepTypes": [
         "devDependencies"
       ],
       "automerge": true
