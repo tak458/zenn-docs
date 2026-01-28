@@ -8,6 +8,6 @@
     "book": "zenn new:book"
   },
   "dependencies": {
-    "zenn-cli": "0.3.1"
+    "zenn-cli": "0.4.3"
   }
 }
